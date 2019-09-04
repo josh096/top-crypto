@@ -22,6 +22,8 @@ function App() {
                 {coins.map(coin => {
                     const floatPrice = parseFloat(coin.priceUsd);
                     const price = floatPrice.toPrecision(5);
+                    const floatChange = parseFloat(coin.changePercent24Hr);
+                    const change = floatChange.toPrecision(3);
                     return (
                         <tr>
                             <td>{coin.rank}</td>
@@ -30,6 +32,7 @@ function App() {
                             <td>
                                 {Math.floor(coin.marketCapUsd).toLocaleString()}
                             </td>
+                            <td>{change}%</td>
                         </tr>
                     );
                 })}
