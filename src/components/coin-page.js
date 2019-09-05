@@ -36,8 +36,18 @@ const CoinPage = ({coins}) => {
                         <div class='card-content'>
                             <div class='media'>
                                 <div class='media-content'>
-                                    <p class='title is-4'>{coin.name}</p>
-                                    <p class='subtitle is-6'>${price}</p>
+                                    <p
+                                        style={{textAlign: 'center'}}
+                                        class='title is-4'
+                                    >
+                                        {coin.name}
+                                    </p>
+                                    <p
+                                        style={{textAlign: 'center'}}
+                                        class='subtitle is-6'
+                                    >
+                                        ${price}
+                                    </p>
                                 </div>
                             </div>
 
