@@ -6,3 +6,7 @@
     height: 12%;
     width: 8%;
 }
+
+a {
+    color: inherit;
+}
