@@ -7,7 +7,11 @@ const CoinPage = ({coins}) => {
         return c.symbol === window.location.pathname.substring(1);
     });
     const floatPrice = parseFloat(coin.priceUsd);
-    const price = floatPrice.toPrecision(5);
+    let price = floatPrice.toPrecision(5);
+    if (coin.symbol === 'BTC') {
+        const fixPrice = floatPrice.toFixed(2);
+        price = parseFloat(fixPrice).toLocaleString();
+    }
     return (
         <>
             <div className='columns'>
