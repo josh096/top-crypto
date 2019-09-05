@@ -1,5 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
+import {Link} from 'react-router-dom';
 
 const CoinPage = ({coins}) => {
     const coin = _.find(coins, c => {
@@ -80,6 +81,16 @@ const CoinPage = ({coins}) => {
                                                     coin.changePercent24Hr
                                                 ).toPrecision(3)}
                                                 %
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colSpan={2}>
+                                                <Link to='/'>
+                                                    {' '}
+                                                    <a class='button is-primary is-fullwidth'>
+                                                        Back to list
+                                                    </a>
+                                                </Link>
                                             </td>
                                         </tr>
                                     </tbody>
