@@ -15,7 +15,7 @@ const CoinPage = ({coins}) => {
     return (
         <>
             <div className='columns'>
-                <div className='column is-one-fifth is-offset-two-fifths'>
+                <div className='column is-one-third is-offset-one-third'>
                     <div class='card' style={{marginTop: '5vh'}}>
                         <div
                             class='card-image'

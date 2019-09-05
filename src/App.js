@@ -18,7 +18,7 @@ function App() {
         getData();
         setInterval(() => {
             getData();
-        }, 5000);
+        }, 10000);
     }, []);
 
     const Loading = () => {
