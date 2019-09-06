@@ -5,6 +5,15 @@ const CoinTable = ({coins}) => {
     return (
         <div className='columns'>
             <div className='column is-half is-offset-one-quarter'>
+                <h1
+                    style={{
+                        fontSize: '2em',
+                        fontWeight: 'bold',
+                        textAlign: 'center'
+                    }}
+                >
+                    Top Crypto Live Updater
+                </h1>
                 <table className='table is-fullwidth is-hoverable'>
                     <thead>
                         <tr>
