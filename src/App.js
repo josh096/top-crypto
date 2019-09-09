@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import './App.css';
+import loading from './Loading.svg';
 import axios from 'axios';
 
 import CoinPage from './components/coin-page';
@@ -16,13 +17,13 @@ function App() {
             });
         };
         getData();
-        // setInterval(() => {
-        //     getData();
-        // }, 10000);
+        setInterval(() => {
+            getData();
+        }, 10000);
     }, []);
 
     const Loading = () => {
-        return <h1>Loading</h1>;
+        return <img src={loading}></img>;
     };
 
     const PageRouter = ({coins}) => {
