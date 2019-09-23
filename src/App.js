@@ -50,7 +50,7 @@ function App() {
         );
     };
 
-    return <>{coins.length ? <Loading /> : <Loading />}</>;
+    return <>{coins.length ? <PageRouter coins={coins} /> : <Loading />}</>;
 }
 
 export default App;
