@@ -1,58 +1,58 @@
-import React from 'react';
-import _ from 'lodash';
-import {Link} from 'react-router-dom';
+import React from "react";
+import _ from "lodash";
+import { Link } from "react-router-dom";
 
-const CoinPage = ({coins}) => {
+const CoinPage = ({ coins }) => {
     const coin = _.find(coins, c => {
         return c.symbol === window.location.pathname.substring(1);
     });
     const floatPrice = parseFloat(coin.priceUsd);
     let price = floatPrice.toPrecision(5);
-    if (coin.symbol === 'BTC') {
+    if (coin.symbol === "BTC") {
         const fixPrice = floatPrice.toFixed(2);
         price = parseFloat(fixPrice).toLocaleString();
     }
     return (
         <>
-            <div className='columns'>
-                <div className='column is-one-third is-offset-one-third'>
-                    <div class='card' style={{marginTop: '5vh'}}>
+            <div className="columns">
+                <div className="column is-one-third is-offset-one-third">
+                    <div class="card" style={{ marginTop: "5vh" }}>
                         <div
-                            class='card-image'
+                            class="card-image"
                             style={{
-                                padding: '5vh'
+                                padding: "5vh"
                             }}
                         >
                             <img
-                                class='image'
+                                class="image"
                                 src={`https://cryptoicons.org/api/icon/${coin.symbol.toLowerCase()}/100`}
                                 alt={`${coin.name} logo`}
                                 style={{
-                                    marginLeft: 'auto',
-                                    marginRight: 'auto'
+                                    marginLeft: "auto",
+                                    marginRight: "auto"
                                 }}
                             ></img>
                         </div>
-                        <div class='card-content'>
-                            <div class='media'>
-                                <div class='media-content'>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
                                     <p
-                                        style={{textAlign: 'center'}}
-                                        class='title is-4'
+                                        style={{ textAlign: "center" }}
+                                        class="title is-4"
                                     >
                                         {coin.name}
                                     </p>
                                     <p
-                                        style={{textAlign: 'center'}}
-                                        class='subtitle is-6'
+                                        style={{ textAlign: "center" }}
+                                        class="subtitle is-6"
                                     >
                                         ${price}
                                     </p>
                                 </div>
                             </div>
 
-                            <div class='content'>
-                                <table className='table is-hoverable'>
+                            <div class="content">
+                                <table className="table is-hoverable">
                                     <tbody>
                                         <tr>
                                             <td>Rank</td>
@@ -99,9 +99,9 @@ const CoinPage = ({coins}) => {
                                         </tr>
                                         <tr>
                                             <td colSpan={2}>
-                                                <Link to='/'>
-                                                    {' '}
-                                                    <a class='button is-primary is-fullwidth'>
+                                                <Link to="/">
+                                                    {" "}
+                                                    <a class="button is-primary is-fullwidth">
                                                         Back to list
                                                     </a>
                                                 </Link>
