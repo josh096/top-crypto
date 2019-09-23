@@ -6,11 +6,8 @@ import axios from "axios";
 import CoinPage from "./components/coin-page";
 import CoinTable from "./components/coin-table";
 
-import Faker from "faker";
-
 function App() {
     const [coins, setCoins] = useState([]);
-    const [hackPhrase, setHackPhrase] = useState("");
 
     useEffect(() => {
         const getData = () => {
@@ -23,10 +20,6 @@ function App() {
             getData();
         }, 10000);
     }, []);
-
-    const hackIt = () => {
-        setHackPhrase(Faker.hacker.phrase());
-    };
 
     const Loading = () => {
         return (
@@ -41,22 +34,6 @@ function App() {
         );
     };
 
-    const Hacker = () => {
-        return (
-            <div className="columns">
-                <div
-                    className="column is-one-third is-offset-one-third"
-                    style={{ textAlign: "center", marginTop: "10%" }}
-                >
-                    <a class="button" onClick={hackIt}>
-                        what do we do?
-                    </a>
-                    <h1 class="title is-1">{hackPhrase}</h1>
-                </div>
-            </div>
-        );
-    };
-
     const PageRouter = ({ coins }) => {
         return (
             <Router>
@@ -66,10 +43,9 @@ function App() {
                     component={() => <CoinTable coins={coins} />}
                 ></Route>
                 <Route
-                    path="/coin/:coin"
+                    path="/:coin"
                     component={() => <CoinPage coins={coins} />}
                 ></Route>
-                <Route exact path="/hacker" component={() => <Hacker />} />
             </Router>
         );
     };

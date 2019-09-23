@@ -1,7 +1,7 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-const CoinRows = ({coins}) => {
+const CoinRows = ({ coins }) => {
     return (
         <>
             {coins.map(coin => {
@@ -9,7 +9,7 @@ const CoinRows = ({coins}) => {
                 let price = floatPrice.toPrecision(5);
                 const floatChange = parseFloat(coin.changePercent24Hr);
                 const change = floatChange.toPrecision(3);
-                if (coin.symbol === 'BTC') {
+                if (coin.symbol === "BTC") {
                     const fixPrice = floatPrice.toFixed(2);
                     price = parseFloat(fixPrice).toLocaleString();
                 }
@@ -19,7 +19,7 @@ const CoinRows = ({coins}) => {
                         <td>
                             <Link
                                 to={{
-                                    pathname: `/${coin.symbol}`
+                                    pathname: `/coin/${coin.symbol}`
                                 }}
                             >
                                 {coin.name}
