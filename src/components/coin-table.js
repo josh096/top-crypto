@@ -1,36 +1,38 @@
-import React from 'react';
-import CoinRows from './coin-rows';
+import React from "react";
+import CoinRows from "./coin-rows";
 
-const CoinTable = ({coins}) => {
+const CoinTable = ({ coins }) => {
     return (
-        <div className='columns'>
-            <div className='column is-half is-offset-one-quarter'>
+        <div className="columns">
+            <div className="column is-half is-offset-one-quarter">
                 <h1
                     style={{
-                        fontSize: '2em',
-                        fontWeight: 'bold',
-                        textAlign: 'center'
+                        fontSize: "2em",
+                        fontWeight: "bold",
+                        textAlign: "center",
+                        color: "white",
+                        padding: "0.5em",
                     }}
                 >
                     Top Crypto Live Updater
                 </h1>
-                <table className='table is-fullwidth is-hoverable'>
+                <table className="table is-fullwidth is-hoverable" style={{ opacity: "85%", borderRadius: 5 }}>
                     <thead>
                         <tr>
                             <th>
-                                <p title='Rank'>Rank</p>
+                                <p title="Rank">Rank</p>
                             </th>
                             <th>
-                                <p title='Name'>Name</p>
+                                <p title="Name">Name</p>
                             </th>
                             <th>
-                                <p title='Price'>Price</p>
+                                <p title="Price">Price</p>
                             </th>
                             <th>
-                                <p title='Market Cap'>Market Cap</p>
+                                <p title="Market Cap">Market Cap</p>
                             </th>
                             <th>
-                                <p title='Price'>Change(24hr)</p>
+                                <p title="Price">Change(24hr)</p>
                             </th>
                         </tr>
                     </thead>

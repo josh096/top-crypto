@@ -3,7 +3,7 @@ import _ from "lodash";
 import { Link } from "react-router-dom";
 
 const CoinPage = ({ coins }) => {
-    const coin = _.find(coins, c => {
+    const coin = _.find(coins, (c) => {
         return c.symbol === window.location.pathname.substring(1);
     });
     const floatPrice = parseFloat(coin.priceUsd);
@@ -16,11 +16,11 @@ const CoinPage = ({ coins }) => {
         <>
             <div className="columns">
                 <div className="column is-one-third is-offset-one-third">
-                    <div class="card" style={{ marginTop: "5vh" }}>
+                    <div class="card" style={{ marginTop: "5vh", borderRadius: 10 }}>
                         <div
                             class="card-image"
                             style={{
-                                padding: "5vh"
+                                padding: "5vh",
                             }}
                         >
                             <img
@@ -29,23 +29,17 @@ const CoinPage = ({ coins }) => {
                                 alt={`${coin.name} logo`}
                                 style={{
                                     marginLeft: "auto",
-                                    marginRight: "auto"
+                                    marginRight: "auto",
                                 }}
                             ></img>
                         </div>
                         <div class="card-content">
                             <div class="media">
                                 <div class="media-content">
-                                    <p
-                                        style={{ textAlign: "center" }}
-                                        class="title is-4"
-                                    >
+                                    <p style={{ textAlign: "center" }} class="title is-4">
                                         {coin.name}
                                     </p>
-                                    <p
-                                        style={{ textAlign: "center" }}
-                                        class="subtitle is-6"
-                                    >
+                                    <p style={{ textAlign: "center" }} class="subtitle is-6">
                                         ${price}
                                     </p>
                                 </div>
@@ -68,42 +62,25 @@ const CoinPage = ({ coins }) => {
                                         </tr>
                                         <tr>
                                             <td>Max Supply</td>
-                                            <td>
-                                                {parseFloat(coin.maxSupply)}
-                                            </td>
+                                            <td>{parseFloat(coin.maxSupply)}</td>
                                         </tr>
                                         <tr>
                                             <td>Market Cap</td>
-                                            <td>
-                                                {parseFloat(
-                                                    coin.marketCapUsd
-                                                ).toPrecision(12)}
-                                            </td>
+                                            <td>{parseFloat(coin.marketCapUsd).toPrecision(12)}</td>
                                         </tr>
                                         <tr>
                                             <td>Volume (24hr)</td>
-                                            <td>
-                                                {parseFloat(
-                                                    coin.volumeUsd24Hr
-                                                ).toPrecision(10)}
-                                            </td>
+                                            <td>{parseFloat(coin.volumeUsd24Hr).toPrecision(10)}</td>
                                         </tr>
                                         <tr>
                                             <td>Change (24hr)</td>
-                                            <td>
-                                                {parseFloat(
-                                                    coin.changePercent24Hr
-                                                ).toPrecision(3)}
-                                                %
-                                            </td>
+                                            <td>{parseFloat(coin.changePercent24Hr).toPrecision(3)}%</td>
                                         </tr>
                                         <tr>
                                             <td colSpan={2}>
                                                 <Link to="/">
                                                     {" "}
-                                                    <a class="button is-primary is-fullwidth">
-                                                        Back to list
-                                                    </a>
+                                                    <a class="button is-primary is-fullwidth">Back to list</a>
                                                 </Link>
                                             </td>
                                         </tr>
