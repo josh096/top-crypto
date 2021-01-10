@@ -11,7 +11,7 @@ function App() {
 
     useEffect(() => {
         const getData = () => {
-            axios.get("https://api.coincap.io/v2/assets?limit=20").then(res => {
+            axios.get("https://api.coincap.io/v2/assets?limit=20").then((res) => {
                 setCoins(res.data.data);
             });
         };
@@ -37,15 +37,8 @@ function App() {
     const PageRouter = ({ coins }) => {
         return (
             <Router>
-                <Route
-                    exact
-                    path="/"
-                    component={() => <CoinTable coins={coins} />}
-                ></Route>
-                <Route
-                    path="/:coin"
-                    component={() => <CoinPage coins={coins} />}
-                ></Route>
+                <Route exact path="/" component={() => <CoinTable coins={coins} />}></Route>
+                <Route path="/:coin" component={() => <CoinPage coins={coins} />}></Route>
             </Router>
         );
     };

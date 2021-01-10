@@ -39,7 +39,7 @@ const CoinPage = ({ coins }) => {
                                     <p style={{ textAlign: "center" }} class="title is-4">
                                         {coin.name}
                                     </p>
-                                    <p style={{ textAlign: "center" }} class="subtitle is-6">
+                                    <p style={{ textAlign: "center", fontSize: "1.2em" }} class="subtitle is-6">
                                         ${price}
                                     </p>
                                 </div>
@@ -70,7 +70,7 @@ const CoinPage = ({ coins }) => {
                                         </tr>
                                         <tr>
                                             <td>Volume (24hr)</td>
-                                            <td>{parseFloat(coin.volumeUsd24Hr).toPrecision(10)}</td>
+                                            <td>{parseFloat(coin.volumeUsd24Hr)}</td>
                                         </tr>
                                         <tr>
                                             <td>Change (24hr)</td>
