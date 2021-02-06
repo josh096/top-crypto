@@ -14,8 +14,17 @@ const CoinTable = ({ coins }) => {
                         padding: "0.5em",
                     }}
                 >
-                    Top Crypto Live Updater
+                    Top Cryptocurrencies
                 </h1>
+                <h5
+                    style={{
+                        textAlign: "center",
+                        color: "white",
+                        padding: "0.5em",
+                    }}
+                >
+                    Powered by CoinCap.io
+                </h5>
                 <table className="table is-fullwidth is-hoverable" style={{ opacity: "85%", borderRadius: 5 }}>
                     <thead>
                         <tr>

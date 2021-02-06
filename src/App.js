@@ -25,7 +25,7 @@ function App() {
         return (
             <div className="columns loading">
                 <div className="column is-one-third is-offset-one-third">
-                    <div class="lds-ripple">
+                    <div className={"lds-ripple"}>
                         <div></div>
                         <div></div>
                     </div>

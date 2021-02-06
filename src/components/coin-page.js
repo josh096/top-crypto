@@ -14,17 +14,17 @@ const CoinPage = ({ coins }) => {
     }
     return (
         <>
-            <div className="columns">
-                <div className="column is-one-third is-offset-one-third">
-                    <div class="card" style={{ marginTop: "5vh", borderRadius: 10 }}>
+            <div className={"columns"}>
+                <div className={"column is-one-third is-offset-one-third"} style={{ height: "100vh" }}>
+                    <div className={"card"} style={{ marginTop: "5vh", borderRadius: 10 }}>
                         <div
-                            class="card-image"
+                            className={"card-image"}
                             style={{
                                 padding: "5vh",
                             }}
                         >
                             <img
-                                class="image"
+                                className={"image"}
                                 src={`https://cryptoicons.org/api/icon/${coin.symbol.toLowerCase()}/100`}
                                 alt={`${coin.name} logo`}
                                 style={{
@@ -33,20 +33,20 @@ const CoinPage = ({ coins }) => {
                                 }}
                             ></img>
                         </div>
-                        <div class="card-content">
-                            <div class="media">
-                                <div class="media-content">
-                                    <p style={{ textAlign: "center" }} class="title is-4">
+                        <div className={"card-content"}>
+                            <div className={"media"}>
+                                <div className={"media-content"}>
+                                    <p style={{ textAlign: "center" }} className={"title is-4"}>
                                         {coin.name}
                                     </p>
-                                    <p style={{ textAlign: "center", fontSize: "1.2em" }} class="subtitle is-6">
+                                    <p style={{ textAlign: "center", fontSize: "1.2em" }} className={"subtitle is-6"}>
                                         ${price}
                                     </p>
                                 </div>
                             </div>
 
-                            <div class="content">
-                                <table className="table is-hoverable">
+                            <div className={"content"}>
+                                <table className={"table is-hoverable"}>
                                     <tbody>
                                         <tr>
                                             <td>Rank</td>
@@ -58,19 +58,19 @@ const CoinPage = ({ coins }) => {
                                         </tr>
                                         <tr>
                                             <td>Circulating Supply</td>
-                                            <td>{parseFloat(coin.supply)}</td>
+                                            <td>{parseFloat(coin.supply).toLocaleString()}</td>
                                         </tr>
                                         <tr>
                                             <td>Max Supply</td>
-                                            <td>{parseFloat(coin.maxSupply)}</td>
+                                            <td>{parseFloat(coin.maxSupply).toLocaleString()}</td>
                                         </tr>
                                         <tr>
                                             <td>Market Cap</td>
-                                            <td>{parseFloat(coin.marketCapUsd).toPrecision(12)}</td>
+                                            <td>${Math.floor(coin.marketCapUsd).toLocaleString()}</td>
                                         </tr>
                                         <tr>
                                             <td>Volume (24hr)</td>
-                                            <td>{parseFloat(coin.volumeUsd24Hr)}</td>
+                                            <td>${parseFloat(coin.volumeUsd24Hr).toLocaleString()}</td>
                                         </tr>
                                         <tr>
                                             <td>Change (24hr)</td>
@@ -80,7 +80,7 @@ const CoinPage = ({ coins }) => {
                                             <td colSpan={2}>
                                                 <Link to="/">
                                                     {" "}
-                                                    <a class="button is-primary is-fullwidth">Back to list</a>
+                                                    <a className={"button is-primary is-fullwidth"}>Back to list</a>
                                                 </Link>
                                             </td>
                                         </tr>
